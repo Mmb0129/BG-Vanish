@@ -14,6 +14,8 @@ import twitter_icon from './twitter_icon.svg'
 import profile_img_1 from './profile_img_1.png'
 import profile_img_2 from './profile_img_2.png'
 import credit_icon from './credit_icon.png'
+import github_icon from './github_icon.svg'
+import linkedin from './linkedin.svg'
 
 export const assets = {
     logo,
@@ -29,21 +31,23 @@ export const assets = {
     google_plus_icon,
     twitter_icon,
     upload_btn_icon,
-    credit_icon
+    credit_icon,
+    github_icon,
+    linkedin
 }
 
 export const testimonialsData = [
     {
         id: 1,
         text: "I've been using BG Vanish for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.",
-        author: "Richard Nelson",
+        author: "Priya",
         image: profile_img_1,
         jobTitle:'Web Developer'
     },
     {
         id: 2,
         text: "I've been using BG Vanish for nearly 6 months, I had a fantastic experience. The quality is top-notch. I recommend others to try this app.",
-        author: "Donald Jackman",
+        author: "Nandalal",
         image: profile_img_2,
         jobTitle:'UI Deginer'
     },
