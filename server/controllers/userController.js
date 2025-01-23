@@ -118,19 +118,19 @@ const paymentRazorpay = async (req, res)=>{
             case 'Basic':
                 plan = 'Basic'
                 credits = 100
-                amount = 10
+                amount = 100
                 break;
 
             case 'Advanced':
                 plan = 'Advanced'
                 credits = 500
-                amount = 50
+                amount = 500
                 break;
             
-            case 'Busines':
+            case 'Business':
                 plan = 'Business'
                 credits = 5000
-                amount = 250
+                amount = 2500
                 break;
             default:
                 break;
@@ -152,9 +152,9 @@ const paymentRazorpay = async (req, res)=>{
         const newTransaction = await transactionModel.create(transactionData)
 
         const options ={
-            amount: amount*100,
+            amount: amount*100,                    //Razorpay expects the amount in paise (1 INR = 100 paise)
             currency: process.env.CURRENCY,
-            receipt: newTransaction._id
+            receipt: newTransaction._id         // Database index is given as transaction id
         }
 
         await razorpayInstance.orders.create(options,(error, order)=>{
@@ -169,7 +169,7 @@ const paymentRazorpay = async (req, res)=>{
 
     }
     catch (error){
-        console.log("Webhook Verification Failed",error.message)
+        console.log("Verification Failed",error.message)
         res.json({success:false, message:error.message})
     }
 }
