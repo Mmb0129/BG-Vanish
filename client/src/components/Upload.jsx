@@ -4,7 +4,7 @@ import { AppContext } from '../context/AppContext'
 
 const Upload = () => {
 
-  const removeBg= useContext(AppContext)
+  const {removeBg} = useContext(AppContext)
 
   return (
     <div className='pb-16'>
